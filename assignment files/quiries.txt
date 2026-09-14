@@ -1,0 +1,23 @@
+16 ?- mother(ophilia,lily).
+true .
+
+17 ?- mother(lucy,ophilia).
+false.
+
+18 ?- father(bob,sally).
+true .
+
+19 ?- father(amy,clara).
+false.
+
+20 ?- sister(lily,lucy).
+true .
+
+21 ?- sister(nora,khalid).
+false.
+
+22 ?- brother(khalid,sally).
+true .
+
+23 ?- brother(lucy,lucas).
+false.
