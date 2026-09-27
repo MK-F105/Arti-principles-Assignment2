@@ -1,32 +1,42 @@
 26 ?- house = house.
 true.
+% both sides are exactly the same.
 
 27 ?- house = abc.
 false.
+% both are different and neither of them is a variable.
 
 28 ?- edge(a,b) = edge(C,b).
 C = a.
+% the first side has the values a and b, the other side has the value b but has variable C in a's place, so for them to match C = a.
 
 29 ?- edge(a,d) = edge(C,B).
 C = a,
 B = d.
+% first side has values a and d and the other side has both variables C and B, compare and match with the other side: C=a and B=d.
 
 30 ?- edge(C,B) = edge(a,d).
 C = a,
 B = d.
+% similarly, the first side has variables C and B and the other side has values a and d, compare and match gives C=a and B=d.
 
 31 ?- edge(A,f(g,h)) = edge(a,B).
 A = a,
 B = f(g, h).
+% the first side has variable A and term f(g,h) and the other side has values a and variable B, compare and match gives A=a and B=f(g,h).
 
 32 ?- edge(A,A) = edge(b,c).
 false.
+% the first and second A are the same variable so they should be the same value, they can't be b and c at the same time.
 
 33 ?- edge(A,A) = edge(b,b).
 A = b.
+% both As are the same variable, both values in the second side are b so A=b is true.
 
 34 ?- A=B, B=f.
 A = B, B = f.
+% since A and B are variables and A=B means they share the same value, B=f means that A=f too.
 
 35 ?- A = B, B = f, A = e.
 false.
+% A and B are variables sharing the same value f, so A cannot equal e.
