@@ -1,5 +1,4 @@
-26 ?- house = house
-|    .
+26 ?- house = house.
 true.
 
 27 ?- house = abc.
